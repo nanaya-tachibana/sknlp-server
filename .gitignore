@@ -1,0 +1,14 @@
+__pycache__/
+env/
+.vscode/
+.project
+.classpath
+.settings
+.idea/
+target/
+*.egg-info/
+dev/
+train_data/
+valid_data/
+.envrc
+*/**/*.tar
