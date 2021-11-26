@@ -52,6 +52,7 @@ class BaseModel:
             with tempfile.NamedTemporaryFile("w") as f:
                 for token in token2idx:
                     f.write(f"{token} 1\n")
+                f.flush()
                 tokenizer = jieba.Tokenizer(dictionary=f.name)
                 tokenizer.initialize()
                 self.tokenizer = partial(tokenizer.lcut, HMM=False)
