@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  tfserving:
+    build: ./tf_serving
+    entrypoint: ./start_tf_server.sh
+    volumes:
+      - models:/models
+  sknlp:
+    build: .
+    environment:
+      - TF_SERVING_ADDRESS=tfserving:8500
+    volumes:
+      - models:/models
+    ports:
+      - "8888:8888"
+    depends_on:
+      - tfserving
+
+volumes:
+  models:
+    external: true

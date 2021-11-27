@@ -129,7 +129,7 @@ python-versions = ">=3.7,<3.11"
 name = "protobuf"
 version = "3.19.1"
 description = "Protocol Buffers"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -230,7 +230,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<3.10"
-content-hash = "0c3c8ddb874da5714702928ceb1d0baf5999dda370c1e0941f09fff4d18a2cf5"
+content-hash = "90a9ba297d586bc43baec17560b26bc73b3e476c113124f240dfaad84ce09287"
 
 [metadata.files]
 anyio = [

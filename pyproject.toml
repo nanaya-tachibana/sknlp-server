@@ -13,6 +13,7 @@ scipy = "^1.7.2"
 starlette = "^0.17.1"
 uvicorn = "^0.15.0"
 pydantic = "^1.8.2"
+protobuf = "^3.19.1"
 
 [tool.poetry.dev-dependencies]
 grpcio-tools = "^1.42.0"
