@@ -35,6 +35,7 @@ class LoadingRequest(BaseModel):
 
 
 async def load(request):
+    global model_handler
     try:
         json_data = json.loads(await request.body())
         model_name = LoadingRequest(**json_data).model_name
@@ -77,12 +78,13 @@ async def load(request):
 
 
 async def unload(request):
+    global model_handler
     model_name = request.path_params["model_name"]
     async with lock:
         if model_name not in model_handler:
             return JSONResponse({"error": "模型未加载"}, status_code=404)
 
-        model_names = [name for name in model_handler.keys() if name != model_name]
+        model_names = [name for name in model_handler if name != model_name]
         try:
             tfserving.reload_config(model_names)
         except grpc.RpcError as exc:
